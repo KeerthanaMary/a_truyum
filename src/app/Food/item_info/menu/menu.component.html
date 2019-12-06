@@ -1,0 +1,11 @@
+
+<app-search></app-search>
+<div class="container-fluid items-row1" >
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngFor='let food of filteredFoodItemList'>
+                <app-food-item-info  [food_item]="food" (addToCartRequest)="addToCart($event)"></app-food-item-info>
+            </div>             
+        </div>
+    </div>
+  
+<!-- <app-food-item-info *ngFor='let food of foodItem' [food_item]="food"></app-food-item-info> -->

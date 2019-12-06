@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+.jumbotron 
+{
+    background-image: url("https://images.unsplash.com/photo-1458677677220-000ddaa037e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+    background-repeat: no-repeat;
+    background-size: cover
+}

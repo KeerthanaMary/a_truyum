@@ -1,0 +1,69 @@
+
+
+   <ng-template *ngIf="isAdminUser();then Admin else customer"></ng-template>
+   <ng-template #customer>
+       
+        <div class="card ">
+  <img [src]="fooditem.imageurl" class="card-img-top" alt="..." height="300px">
+                        <div class="card-body">
+                            <div class="inline-block">
+                                <span>
+                                    <label for="sandwich" class="card-title">{{fooditem.name}}</label>
+                                    <label for="sandwich-price" class="card-title float-right">{{fooditem.price | currency:'INR'}}</label>
+                                </span>
+                            </div>
+                            <div class="inline-block">
+                                <span>
+                                        <b class="card-text"><span [className]="fooditem.active?'badge badge-success item-status':'badge badge-danger item-status'">{{fooditem.active?'Active':'Inactive'}}</span>{{fooditem.category}}</b>
+                                    <b class="badge badge-secondary badge-info float-right" *ngIf="fooditem.delivery">free </b>
+                                    <b class="material-icons text-primary float-right ml-1">
+                                        local_shipping
+                                    </b>
+                                </span>
+                            </div>
+                            <div class="inline-block">
+                                    <div class="container date-of-launch-container">
+                                            <small class="cart-text date-of-launch"><i class="material-icons date-of-launch-icon">access_time</i>Launch</small>
+                                    </div>
+                                    <div>
+                                            <small class="cart-text">{{fooditem.dateoflaunch | date:'shortDate'}}</small>
+                                        </div>
+                                <button type="button" (click)="onAddToCart(fooditem.id)" class="btn btn-warning float-right mt-3"><b class="material-icons float-md-left mr-1">add_shopping_cart</b>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template #Admin>
+                        <div class="card ">
+                  <img [src]="fooditem.imageurl" class="card-img-top" alt="..." height="300px">
+                                        <div class="card-body">
+                                            <div class="inline-block">
+                                                <span>
+                                                    <label for="sandwich" class="card-title">{{fooditem.name}}</label>
+                                                    <label for="sandwich-price" class="card-title float-right">{{fooditem.price | currency:'INR'}}</label>
+                                                </span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <span>
+                                                        <b class="card-text"><span [className]="fooditem.active?'badge badge-success item-status':'badge badge-danger item-status'">{{fooditem.active?'Active':'Inactive'}}</span>{{fooditem.category}}</b>
+                                                    <b class="badge badge-secondary badge-info float-right" *ngIf="fooditem.delivery">free </b>
+                                                    <b class="material-icons text-primary float-right ml-1">
+                                                        local_shipping
+                                                    </b>
+                                                </span>
+                                            </div>
+                                            <div class="inline-block">
+                                                    <div class="container date-of-launch-container">
+                                                            <small class="cart-text date-of-launch"><i class="material-icons date-of-launch-icon">access_time</i>Launch</small>
+                                                    </div>
+                                                    <div>
+                                                            <small class="cart-text">{{fooditem.dateoflaunch | date:'shortDate'}}</small>
+                                                        </div>
+                                                <button type="button" (click)="onEdit(fooditem.id)" class="btn btn-warning float-right mt-3"><b class="material-icons float-md-left mr-1">edit</b>Edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+         
+        
